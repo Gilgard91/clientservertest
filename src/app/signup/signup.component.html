@@ -1,0 +1,173 @@
+<!-- <div class="d-flex flex-column align-items-center">
+  <input
+    [(ngModel)]="userData.username"
+    type="text"
+    id=""
+    placeholder="username"
+  />
+  <input [(ngModel)]="userData.email" type="text" id="" placeholder="email" />
+  <input
+    [(ngModel)]="userData.password"
+    type="text"
+    id=""
+    placeholder="password"
+  />
+
+  <input [(ngModel)]="userData.name" type="text" id="" placeholder="nome" />
+  <input
+    [(ngModel)]="userData.surname"
+    type="text"
+    id=""
+    placeholder="cognome"
+  />
+  <input
+    [(ngModel)]="userData.avatar"
+    type="text"
+    id=""
+    placeholder="avatarUrl"
+  />
+
+  <h5>Seleziona un ruolo</h5>
+  <select [(ngModel)]="userData.role" id="dropdown" placeholder="role">
+    <option value="USER">User</option>
+    <option value="ADMIN">Admin</option>
+  </select>
+  
+  <button type="button" class="btn btn-primary" (click)="signUp()">
+    Invia
+  </button>
+</div> -->
+
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div
+          class="card shadow-2-strong card-registration"
+          style="border-radius: 15px"
+        >
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Form Registrazione</h3>
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <div class="form-outline">
+                  <input
+                    [(ngModel)]="userData.nome"
+                    type="text"
+                    id="firstName"
+                    class="form-control form-control-lg"
+                  />
+                  <label class="form-label" for="firstName">Nome</label>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <div class="form-outline">
+                  <input
+                    [(ngModel)]="userData.cognome"
+                    type="text"
+                    id="lastName"
+                    class="form-control form-control-lg"
+                  />
+                  <label class="form-label" for="lastName">Cognome</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <div class="form-outline">
+                  <input
+                    [(ngModel)]="userData.email"
+                    type="text"
+                    id="Email"
+                    class="form-control form-control-lg"
+                  />
+                  <label class="form-label" for="Email">Email</label>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <div class="form-outline">
+                  <input
+                    [(ngModel)]="userData.username"
+                    type="text"
+                    id="username"
+                    class="form-control form-control-lg"
+                  />
+                  <label class="form-label" for="username">Username</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <div class="form-outline">
+                  <input
+                    [(ngModel)]="userData.password"
+                    type="password"
+                    id="password"
+                    class="form-control form-control-lg"
+                  />
+                  <label class="form-label" for="password">Password</label>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <div class="form-outline">
+                  <input
+                    #fileInput
+                    type="file"
+                    (change)="onFileSelected($event)"
+                    id="avatar"
+                    class="form-control form-control-lg"
+                  />
+                  <label class="form-label" for="avatar">Avatar</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-12">
+                <div class="col-md-6 mb-4">
+                  <h6 class="mb-2 pb-1">Seleziona un ruolo:</h6>
+
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="user"
+                      value="USER"
+                      [(ngModel)]="userData.ruolo"
+                      checked
+                    />
+                    <label class="form-check-label" for="user">User</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="inlineRadioOptions"
+                      id="admin"
+                      value="ADMIN"
+                      [(ngModel)]="userData.ruolo"
+                    />
+                    <label class="form-check-label" for="admin">Admin</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-2">
+              <input
+                class="btn btn-primary btn-block gradient-custom-3"
+                type="submit"
+                value="Invia"
+                (click)="signUp()"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

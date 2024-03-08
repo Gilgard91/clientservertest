@@ -1,0 +1,59 @@
+<div class="container mt-5 fatture-container">
+  <div class="form-group" style="width: 15%">
+    <label for="cliente">Cliente:</label>
+    <!-- <input
+      type="text"
+      class="form-control"
+      id="cliente"
+      [(ngModel)]="clienteFilter"
+      (input)="applyFilters()"
+    /> -->
+    <h5 class="text-center" style="color: whitesmoke">Filtra per stato:</h5>
+    <select
+      class="form-control custom-select"
+      id="orderBy"
+      [(ngModel)]="statoFatturaFilter"
+      (change)="applyFilters()"
+      style="height: 32px; width: 166%"
+    >
+      <option value="">TUTTE</option>
+      <option value="scartata">SCARTATA</option>
+      <option value="IN+BOZZA">IN BOZZA</option>
+      <option value="CONSEGNATA">CONSEGNATA</option>
+      <option value="INVIATA">INVIATA</option>
+      <option value="IN+ELABORAZIONE">IN ELABORAZIONE</option>
+    </select>
+  </div>
+  <div class="card table-card">
+    <table class="table table-striped table-bordered mb-0">
+      <thead>
+        <tr>
+          <th colspan="6" class="text-center t-head">FATTURE</th>
+        </tr>
+        <tr>
+          <th scope="col">Data</th>
+          <th scope="col">Importo</th>
+          <th scope="col">Cliente</th>
+          <th scope="col">Stato Fattura</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="fatture">
+        <tr *ngFor="let fattura of fatture">
+          <td>{{ fattura.data }}</td>
+          <td>€{{ fattura.importo }}</td>
+          <td>{{ fattura.cliente.ragioneSociale }}</td>
+          <td>{{ fattura.statoFattura.nomeStatoFattura }}</td>
+        </tr>
+      </tbody>
+      <tbody *ngIf="fattureFiltrate">
+        <tr *ngFor="let fattura of fattureFiltrate">
+          <td>{{ fattura.data }}</td>
+          <td>€{{ fattura.importo }}</td>
+          <td>{{ fattura.cliente.ragioneSociale }}</td>
+          <td>{{ fattura.statoFattura.nomeStatoFattura }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<hr class="mt-5" />

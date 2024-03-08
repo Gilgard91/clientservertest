@@ -1,0 +1,123 @@
+<!-- <div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="input-group d-flex flex-column">
+    <div>
+      <span class="input-group-text">email</span>
+      <input
+        type="text"
+        [(ngModel)]="email"
+        aria-label="email"
+        class="form-control"
+      />
+    </div>
+    <span class="input-group-text">password</span>
+    <div>
+      <input
+        type="text"
+        [(ngModel)]="password"
+        aria-label="password"
+        class="form-control"
+      />
+    </div>
+    <button type="button" class="btn btn-primary" (click)="login()">
+      Accedi
+    </button>
+  </div>
+</div> -->
+
+<section class="h-100 gradient-form" style="background-color: #eee">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-10">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0">
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
+                <div class="text-center">
+                  <img
+                    src="https://www.claudiovaccaro.it/wp-content/uploads/2023/04/epicode.png"
+                    style="width: 180px"
+                    alt="logo"
+                  />
+                  <h5 class="mt-1 mb-5 pb-1">ENERGY SERVICES</h5>
+                </div>
+
+                <p>Inserisci le tue credenziali:</p>
+
+                <form [formGroup]="loginForm" (ngSubmit)="login()">
+                  <div class="form-outline mb-4">
+                    <input
+                      formControlName="email"
+                      type="email"
+                      placeholder=""
+                      id="email"
+                    />
+                    <label class="form-check-label mx-2" for="email"
+                      >Email</label
+                    >
+
+                    <p
+                      style="color: red"
+                      *ngIf="
+                        loginForm.get('email')?.invalid &&
+                        loginForm.get('email')?.value.length >= 5
+                      "
+                    >
+                      Email incorretta
+                    </p>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input formControlName="password" type="password" />
+                    <label class="form-check-label mx-2" for="form2Example22"
+                      >Password</label
+                    >
+                  </div>
+
+                  <div class="text-center pt-1 mb-5 pb-1">
+                    <button
+                      class="btn btn-primary btn-block gradient-custom-2 mb-3"
+                      type="submit"
+                    >
+                      Accedi
+                    </button>
+                    <p>{{ error }}</p>
+                  </div>
+                </form>
+                <div
+                  class="d-flex align-items-center justify-content-center pb-4"
+                >
+                  <p class="mb-0 me-2">Non hai un account?</p>
+                  <button
+                    type="button"
+                    [routerLink]="['/signup']"
+                    class="btn btn-primary btn-block gradient-custom-2"
+                  >
+                    Registrati
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+              <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                <img
+                  src="https://i.ibb.co/Xx2MKdr/epicode-logo2.png"
+                  style="width: 85px"
+                  alt=""
+                />
+                <h4 class="mb-4 mt-3">EPICODE ENERGY SERVICES</h4>
+                <p class="small mb-0">
+                  EPICODE Energy Services è un leader nell'innovazione
+                  energetica, impegnato a fornire soluzioni sostenibili e su
+                  misura per le esigenze dei nostri clienti. Con un team esperto
+                  e una visione orientata al futuro, ci impegniamo a trasformare
+                  il modo in cui il mondo gestisce l'energia. Siamo il partner
+                  ideale per un futuro energetico più efficiente e sostenibile.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,36 @@
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.gradient-custom {
+  background: linear-gradient(to bottom right, #38038b, #ca2275);
+}
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+  font-size: 1rem;
+  line-height: 2.15;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+}
+.card-registration .select-arrow {
+  top: 13px;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  font-size: 16px;
+}
+
+.card-registration {
+  box-shadow: -17px 19px 20px 0px rgba(0, 0, 0, 0.5);
+}
+
+.gradient-custom-3 {
+  // background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+
+  background: linear-gradient(to right, #38038b, #ca2275);
+  font-size: 22px;
+  padding: 4px 15px;
+}
